@@ -1,0 +1,20 @@
+#server.port=8530
+
+#spring.application.name=demo-zuul
+
+#eureka.client.service-url.defaultZone=http://localhost:8500/eureka/
+
+#zuul.routes.api-a.path=/feign/**
+#zuul.routes.api-a.service-id=demo-feign
+
+#zuul.routes.api-b.path=/ribbon/**
+#zuul.routes.api-b.service-id=demo-ribbon
+server:  port: 8503
+spring:  application:    name: demo-zuul
+eureka:  client:    service-url:      defaultZone: http://localhost:8500/eureka/
+zuul:  routes:    api-a:
+      path: /feign/**
+      service-id: demo-feign
+    api-b:
+      path: /ribbon/**
+      service-id: demo-ribbon
